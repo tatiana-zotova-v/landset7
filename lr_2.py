@@ -46,7 +46,7 @@ def drow_pic(ndvi):
 
 
 if __name__ == '__main__':
-    b4_pic = 'cropped_krasnoyarsk_4.TIF'
-    b3_pic = 'cropped_krasnoyarsk_3.TIF'
+    b4_pic = 'images\\cropped_krasnoyarsk_4.TIF'
+    b3_pic = 'images\\cropped_krasnoyarsk_3.TIF'
     pic = drow_pic(find_ndvi(b4_pic, b3_pic))
     pic.show()

@@ -3,9 +3,9 @@ from PIL import Image
 
 
 def find_coord_town():
-    krasnoyarsk_coord = {'CORNER_UL_LAT_PRODUCT': 56.15572,  # широта
+    krasnoyarsk_coord = {'CORNER_UL_LAT_PRODUCT': 56.15572,
                          'CORNER_UL_LON_PRODUCT': 92.61526,
-                         'CORNER_UR_LAT_PRODUCT': 56.15572,  # широта
+                         'CORNER_UR_LAT_PRODUCT': 56.15572,
                          'CORNER_UR_LON_PRODUCT': 93.20310,
                          'CORNER_LL_LAT_PRODUCT': 55.89637,
                          'CORNER_LL_LON_PRODUCT': 92.61526,
@@ -58,15 +58,13 @@ def pixels_per_coordinate(filename, coordinates):
 def crop_pic(angles, filename_SR_B2):
     img = Image.open(filename_SR_B2)
     img_crop = img.crop((angles['left'], angles['upper'], angles['right'], angles['lower']))
-    img_crop.save('cropped_krasnoyarsk.TIF')
+    img_crop.save('images\\cropped_krasnoyarsk.TIF')
     return img_crop
 
 
 if __name__ == '__main__':
-    MTL = "C:\\Users\\MI\\Desktop\\maёvnickek\\uchoba\\V\\ИС Аэрокосмических Комплексов\\" \
-          "LE07_L1TP_142021_20020409_20200916_02_T1_MTL.txt"
-    SR_B2 = "C:\\Users\\MI\\Desktop\\maёvnickek\\uchoba\\V\\ИС Аэрокосмических Комплексов\\" \
-            "LE07_L1TP_142021_20020409_20200916_02_T1_B2.TIF"
+    MTL = "source\\LE07_L1TP_142021_20020409_20200916_02_T1_MTL.txt"
+    SR_B2 = "source\\LE07_L1TP_142021_20020409_20200916_02_T1_B2.TIF"
     town_coord = find_coord_town()
     pic_coord = find_coord_pic(MTL)
     delta = delta_pic_town_ul(pic_coord, town_coord)
