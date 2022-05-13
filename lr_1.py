@@ -59,6 +59,7 @@ def crop_pic(angles, filename_SR_B2):
     img = Image.open(filename_SR_B2)
     img_crop = img.crop((angles['left'], angles['upper'], angles['right'], angles['lower']))
     img_crop.save('images\\cropped_krasnoyarsk.TIF')
+    img_crop.save('images\\cropped_krasnoyarsk.jpg')
     return img_crop
 
 
