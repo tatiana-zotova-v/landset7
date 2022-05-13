@@ -42,6 +42,7 @@ def drow_pic(ndvi):
             col += 1
         col = 0
         row += 1
+        NDVI_pic.save('images\\ndvi_krasnoyarsk.jpg')
     return NDVI_pic
 
 
